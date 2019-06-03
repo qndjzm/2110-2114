@@ -1,7 +1,6 @@
 # 2110-2114
 정보 프로젝트
 
-# 1차 목표
 base = input('5-3순서대로 입력해주세요')
 fragment = input('5-3순서대로 입력해주세요')
 def enzyme(base,fragemnt) :
@@ -25,7 +24,7 @@ def enzyme(base,fragemnt) :
     else :
         print('만들어진 절편은 존재하지 않습니다.')
 enzyme(base,fragment)
-# 2차 목표
+
 class Base :
     def __init__(self, k=[]) : 
         self.bases = k
