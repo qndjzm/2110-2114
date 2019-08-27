@@ -1,29 +1,33 @@
 # 2110-2114
 정보 프로젝트
 
-base = input('5-3순서대로 입력해주세요') <br>
-fragment = input('5-3순서대로 입력해주세요') <br>
-def enzyme(base,fragemnt) : <br>
-    base_saver = [] <br>
-    cnt = 0 <br>
-    check = 0 <br>
-    while len(base[0:-1] ) != 1 : <br>
-        for i in range(len(base)-2) : <br>
-            if base[i:i+len(fragment)] == fragment : <br>
-                base1 = base[0:i+1] <br>
-                print(base1) <br>
-                check += 0 <br>
-                break <br>
-        if check == 0 : <br>
-            break <br>
-        base_saver.append(base1) <br>
-        cnt +=1 <br>
-        base = base[len(base1):len(base)] <br>
-    if check != 0 : <br>
-        print('RFLP의 갯수는' , cnt , '입니다') <br>
-    else : <br>
-        print('만들어진 절편은 존재하지 않습니다.') <br>
-enzyme(base,fragment) <br>
+dna = input('5-3 방향의 염기서열을 입력해주세요) <br>
+fullprimer = input('5-3 방향의 염기서열을 입력해주세요') <br>
+def enzyme(dna,fullprimer) : 
+    dna_saver = []
+    cnt = 0
+    check = 0
+    while len(dna[0:-1] ) != 1 :
+        for i in range(len(dna)-1) :
+            if dna[i:i+len(fullprimer)] == fullprimer :
+                dna1 = dna[0:i+1]
+                print(dna1)
+                check += 1
+                break
+        else : 
+            print(dna)
+            cnt += 1
+            break
+        if check == 0 :
+            break
+        dna_saver.append(dna1)
+        cnt +=1
+        dna = dna[len(dna1):len(dna)]
+    if check != 0 :
+        print('RFLP의 갯수는' , cnt , '입니다')
+    else :
+        print('만들어진 절편은 존재하지 않습니다.')
+enzyme(dna,fullprimer)
 
 class Base : <br>
     def __init__(self, k=[]) : <br>
@@ -43,23 +47,23 @@ class Base : <br>
         for i in range(len(b)) : <br>
             print(b[i], end = '') <br>
         
-    def lyase(self) : 
-        return self.bases[0:-1] 
-    def size(self) :
-        return len(self.bases) 
-    def restrict(self) : 
-        fragment = input('5-3순서대로 입력해주세요')
-        enzyme(self.bases,fragment)
-    def Dna_checker(self) : 
-        for i in range(len(self.bases)): 
-            if self.bases[i] == 'A': 
-                continue 
-            elif self.bases[i] == 'G':
+    def lyase(self) : <br>
+        return self.bases[0:-1] <br>
+    def size(self) : <br>
+        return len(self.bases) <br>
+    def restrict(self) : <br>
+        fragment = input('5-3순서대로 입력해주세요') <br>
+        enzyme(self.bases,fragment) <br>
+    def Dna_checker(self) : <br>
+        for i in range(len(self.bases)): <br>
+            if self.bases[i] == 'A': <br>
                 continue <br>
-            elif self.bases[i] == 'C': 
-                continue 
-            elif self.bases[i] == 'T':
+            elif self.bases[i] == 'G': <br>
                 continue <br>
-        else: 
-            print('다음의 DNA는 존재하지 않습니다.')
-            return False 
+            elif self.bases[i] == 'C': <br>
+                continue <br>
+            elif self.bases[i] == 'T': <br>
+                continue <br>
+        else: <br>
+            print('다음의 DNA는 존재하지 않습니다.') <br>
+            return False <br>
