@@ -43,23 +43,23 @@ class Base : <br>
         for i in range(len(b)) : <br>
             print(b[i], end = '') <br>
         
-    def lyase(self) : <br>
-        return self.bases[0:-1] <br>
-    def size(self) : <br>
-        return len(self.bases) <br>
-    def restrict(self) : <br>
-        fragment = input('5-3순서대로 입력해주세요') <br>
-        enzyme(self.bases,fragment) <br>
-    def Dna_checker(self) : <br>
-        for i in range(len(self.bases)): <br>
-            if self.bases[i] == 'A': <br>
+    def lyase(self) : 
+        return self.bases[0:-1] 
+    def size(self) :
+        return len(self.bases) 
+    def restrict(self) : 
+        fragment = input('5-3순서대로 입력해주세요')
+        enzyme(self.bases,fragment)
+    def Dna_checker(self) : 
+        for i in range(len(self.bases)): 
+            if self.bases[i] == 'A': 
+                continue 
+            elif self.bases[i] == 'G':
                 continue <br>
-            elif self.bases[i] == 'G': <br>
+            elif self.bases[i] == 'C': 
+                continue 
+            elif self.bases[i] == 'T':
                 continue <br>
-            elif self.bases[i] == 'C': <br>
-                continue <br>
-            elif self.bases[i] == 'T': <br>
-                continue <br>
-        else: <br>
-            print('다음의 DNA는 존재하지 않습니다.') <br>
-            return False <br>
+        else: 
+            print('다음의 DNA는 존재하지 않습니다.')
+            return False 
